@@ -23,6 +23,7 @@ public class Card implements Comparable {
 
 	private void seteSuit(eSuit eSuit) {
 		this.eSuit = eSuit;
+		
 	}
 
 	private void seteRank(eRank eRank) {
