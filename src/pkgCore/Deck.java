@@ -58,16 +58,17 @@ public class Deck {
 	}
 	
 	public int getRemaining(Object eNum) {
+	//start at 0	
 		int cardsRemaining = 0;
-		
+		//iterate through full deck
 			for (int i = 0; i < cardsInDeck.size() - 1; i++)
-				
+			//if instance of eSuit add to cardsRemaining	
 				if (eNum instanceof eSuit) {
 					
 					if (cardsInDeck.get(i).geteSuit() == eNum)
 						cardsRemaining++;
 				} 
-				
+				//if in eRank, add to cardsRemaining
 				else { 
 					
 					if (cardsInDeck.get(i).geteRank() == eNum)
@@ -75,5 +76,7 @@ public class Deck {
 					
 				} return cardsRemaining; 
 	}
+	
+	
 		
 	}
