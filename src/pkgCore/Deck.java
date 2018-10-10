@@ -1,5 +1,7 @@
 package pkgCore;
 
+import pkgEnum.*; 
+
 import java.util.ArrayList;
 import java.util.Collections;
 
@@ -55,8 +57,23 @@ public class Deck {
 		return cardsInDeck.size();
 	}
 	
-	public int getRemaining() {
-		return cardsInDeck.size();
+	public int getRemaining(Object eNum) {
+		int cardsRemaining = 0;
+		
+			for (int i = 0; i < cardsInDeck.size() - 1; i++)
+				
+				if (eNum instanceof eSuit) {
+					
+					if (cardsInDeck.get(i).geteSuit() == eNum)
+						cardsRemaining++;
+				} 
+				
+				else { 
+					
+					if (cardsInDeck.get(i).geteRank() == eNum)
+						cardsRemaining++;
+					
+				} return cardsRemaining; 
+	}
 		
 	}
-}

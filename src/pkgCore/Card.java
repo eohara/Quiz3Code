@@ -1,4 +1,5 @@
 package pkgCore;
+import pkgEnum.*; 
 
 import java.util.Comparator;
 
@@ -58,4 +59,6 @@ public class Card implements Comparable {
 		
 		return 0;
 	}
+	
+	
 }
