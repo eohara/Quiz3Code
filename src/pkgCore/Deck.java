@@ -9,15 +9,25 @@ import pkgException.DeckException;
 
 public class Deck {
 
-	private ArrayList<Card> cardsInDeck = new ArrayList<Card>();
+	private ArrayList<Card> cardsInDeck = new ArrayList<Card>(1);
 
 	public Deck() {
+		int iCardNbr = 1;
 		for (eSuit eSuit : eSuit.values()) {
 			for (eRank eRank : eRank.values()) {
-				cardsInDeck.add(new Card(eSuit, eRank));
+				cardsInDeck.add(new Card(eSuit, eRank, iCardNbr++));
 			}
 		}
+		
 		Collections.shuffle(cardsInDeck);
+	}
+
+	public ArrayList<Card> getCardsInDeck() {
+		return cardsInDeck;
+	}
+
+	public void setCardsInDeck(ArrayList<Card> cardsInDeck) {
+		this.cardsInDeck = cardsInDeck;
 	}
 
 	public Card Draw() throws DeckException {
@@ -43,5 +53,10 @@ public class Deck {
 	public int getiDeckCount()
 	{
 		return cardsInDeck.size();
+	}
+	
+	public int getRemaining() {
+		return cardsInDeck.size();
+		
 	}
 }
